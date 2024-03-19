@@ -1,5 +1,6 @@
 # 내용
 # 내용2
+# 내용3
 git add . 
 git commit -m 작업내용 
 git config --global user.email jeongsuri96@gmail.com
