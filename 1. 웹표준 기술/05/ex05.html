@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <style>
+            input[type="checkbox"]:checked + label{
+                background: gray; /*checked : 체크된 상태 일때*/
+            } 
+            input[type="text"]:focus{
+                background: yellow;/* focus : 입력대기 상태 일때*/
+            }
+            .box{
+                width : 100px;
+                height : 100px;
+                background: orange;
+                transition: all 10s;
+            }
+            .box:hover{ /*hover : 마우스 올린 상태 선택*/
+                width : 200px;
+                height : 200px;
+                background: orange;
+            }
+        </style>
+        <input type="checkbox" id="check">
+        <label for="check">클릭!</label>
+        <br>
+        <input type="text" id="text">
+        <br>
+        <div class="box"></div>
+    </body>
+</html>
