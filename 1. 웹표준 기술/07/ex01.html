@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <style>
+            .bg{
+                border-bottom: 1px solid #000;
+                height : 500px;
+                background-image : url('images/logo.png'); /*배경이미지 설정*/
+                background-repeat: no-repeat; /*반복없음*/ 
+                background-position: center center
+            }
+            .bg2{
+                border : 1px solid #000;
+                width : 700px;
+                height: 400px;
+                background-repeat: no-repeat; /*반복없음*/
+                background-image: url('images/bg.jpg');
+                /*background-size: cover; 이미지를 영역 안으로 채우기*/
+                background-size: 50% /*이미지 너비를 50%*/
+            }
+            .bg3{
+                border : 1px solid #000;
+                height : 500px;
+                padding : 100px; /*내부 여백 : 100px*/
+                background-image: url('images/bg.jpg');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-origin: content-box; /*내부여백 100px시 설정됨*/
+            }
+        </style>
+        <div class="bg"></div>
+        <div class="bg2"></div>
+        <div class="bg3"></div>
+    </body>
+</html>
