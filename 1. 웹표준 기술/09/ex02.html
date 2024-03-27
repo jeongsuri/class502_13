@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <style>
+            ul{
+                list-style-type: none;
+                padding : 0;
+            } /*리스트 기본스타일 제거*/
+            li{
+                float:left;
+            }
+
+            ul::after{
+                content:''; /*content가 있어야 활성화된다*/
+                clear:left; /*가상클래스 선택자*/
+            }
+        </style>
+        <ul>
+            <li>메뉴1</li>
+            <li>메뉴2</li>
+            <li>메뉴3</li>
+            ::after /*가상클래스 선택자*/
+        </ul>       
+        <span class="clear"></span>
+        <div>내용</div> 
+    </body>
+</html>
