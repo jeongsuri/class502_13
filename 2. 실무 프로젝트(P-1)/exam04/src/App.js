@@ -1,7 +1,7 @@
-import LifeCycle from "./components/LifeCycle";
+import Average from './components/Average';
 
 const App = () => {
-  return <LifeCycle />;
+  return <Average />;
 };
 
 export default App;

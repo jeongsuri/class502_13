@@ -16,7 +16,7 @@ class LifeCycle extends Component {
     if (prevProps.mode === 'even' && prevState.number % 2 === 1) {
       return { number: prevState.number + 1 };
     }
-    
+
     return null;
   }
 
@@ -48,7 +48,12 @@ class LifeCycle extends Component {
     console.log('snapshot', snapshot);
   }
 
+  componentWillUnmount() {
+    console.log('componentWillUnmount');
+  }
+
   render() {
+    number.abc();
     console.log('render');
     const { number } = this.state;
     return (
