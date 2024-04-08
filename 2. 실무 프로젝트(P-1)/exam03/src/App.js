@@ -1,9 +1,9 @@
-import Average from "./components/Average";
+import TodoContainer from "./containers/TodoContainer2";
 
 const App = () =>{
 
 
-  return <Average />;
+  return <TodoContainer />;
 };
 
 export default App;

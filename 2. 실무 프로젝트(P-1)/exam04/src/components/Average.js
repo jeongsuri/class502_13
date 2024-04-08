@@ -1,12 +1,11 @@
-import { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 
 function getAverage(nums) {
   // 합계 / 갯수
 
   const total = nums.reduce((acc, num) => {
-    //reduce
+    //reduce(누산기,현재값)
     acc += num;
-
     return acc;
   }, 0);
 
@@ -37,7 +36,10 @@ const Average = () => {
     [num],
   );
 
-  const avg = getAverage(nums);
+  //const avg = getAverage(nums); 
+  //nums에 값이 입력(변경)될때만 호출될 필요가있다.
+  const avg = useMemo(()=>getAverage(nums),[nums]);
+
   return (
     <>
       <form autoComplete="off" onSubmit={onSubmit}>
@@ -54,4 +56,4 @@ const Average = () => {
   );
 };
 
-export default Average;
+export default React.memo(Average);
