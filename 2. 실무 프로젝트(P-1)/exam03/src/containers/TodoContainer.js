@@ -1,6 +1,7 @@
 import { useState, useRef, useCallback } from 'react';
 import AddTodo from '../components/AddTodo';
 import TodoList from '../components/TodoList';
+import { produce } from 'immer';
 
 const intialValue = [
   { id: 1, title: '할일1', done: true },
@@ -27,7 +28,7 @@ const TodoContainer = () => {
         setMessage('할일을 입력하세요.');
         return;
       }
-
+      /*
       setItems((prevItems) => {
         return prevItems.concat({
           id: id.current,
@@ -35,6 +36,15 @@ const TodoContainer = () => {
           done: false,
         });
       });
+      */
+     //immer 사용하여 변경
+     setItems(produce((draft)=>{
+      draft.push({
+        id:id.current,
+        title : todo.trim(),
+        done: false,
+      });
+     }));
 
       id.current++;
 
@@ -61,11 +71,16 @@ const TodoContainer = () => {
       */
 
       //함수형 업데이트로 대입하는방식 : 매개변수로 함수형으로 사용하면 변화감지 변수를 사용안해도된다.
+      /*
     setItems((prevItems) => {
       return prevItems.map((item) =>
         item.id === id ? { ...item, done: !item.done } : item,
       );
     });
+    */
+   setItems
+   (produce((draft)=>
+    draft.forEach((item)=>item.id ===id && (item.done =!item.done)),))
   }, []);
 
   // 할일 목록 제거
