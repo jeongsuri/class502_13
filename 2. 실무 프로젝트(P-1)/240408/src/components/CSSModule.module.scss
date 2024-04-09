@@ -10,6 +10,10 @@
   }
 }
 
+.menus{ //CSSModule.js
+  background: gray;
+}
+
 :global .commonColor {
   color: blue;
 }
