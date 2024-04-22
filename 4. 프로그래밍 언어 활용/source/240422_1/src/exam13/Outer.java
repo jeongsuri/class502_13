@@ -8,6 +8,7 @@ public class Outer {
                 return num1 + num2 + num3;
             }
         };
+        System.out.println("cal:"+cal);
         //int result = cal.add(10,20); 이런식으로 내부에 정의하면 일회용으로만 가능하다.
         //System.out.println(result);
         return cal; //cal객체를 반환시킴, cal객체의 주소값을 외부에 리턴함으로써 외부에서도 사용가능하게한다.
