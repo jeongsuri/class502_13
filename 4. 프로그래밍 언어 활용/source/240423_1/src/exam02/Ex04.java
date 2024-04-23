@@ -11,13 +11,15 @@ public class Ex04 {
             fis = new FileInputStream("a.txt");
             System.out.println("파일작업");
         }catch (IOException e){
+            System.out.println(e);
             e.printStackTrace();
         }finally {
             System.out.println("finally");
             if (fis != null){
                 try{
                     fis.close();
-                } catch (IOException e2){
+                } catch (IOException e)
+                {
 
                 }
             }
