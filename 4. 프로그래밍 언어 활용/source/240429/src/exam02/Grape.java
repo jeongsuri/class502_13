@@ -1,8 +1,7 @@
-package exam01;
+package exam02;
 
 public class Grape extends Fruit {
-    public String get() {
+    public String toString(){
         return "포도";
-
     }
 }
