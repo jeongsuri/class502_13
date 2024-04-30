@@ -1,7 +1,7 @@
 package exam02;
 
 public class Apple extends Fruit {
-    public String toString(){
+    public String toStrings(){
         return "사과";
     }
 }
