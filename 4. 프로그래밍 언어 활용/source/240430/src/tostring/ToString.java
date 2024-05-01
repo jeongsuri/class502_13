@@ -1,4 +1,6 @@
 /*
+package test02;
+
 class Person {
     String name;
     int age;
@@ -22,4 +24,6 @@ public class Main {
         System.out.println(p1); // 이름 : 홍길동, 나이 : 54세
     }
 }
+
  */
+
