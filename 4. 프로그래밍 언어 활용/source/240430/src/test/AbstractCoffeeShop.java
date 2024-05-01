@@ -44,7 +44,7 @@ public abstract class AbstractCoffeeShop implements CoffeeShop {
 
         System.out.printf("%s님이 %s에서 %s를 %d원에 주문했습니다.%n", person.getName(), name, menu, price);
 
-        return this;//버퍼 뭔말이야 ㅅㅂ
+        return this;
     }
 
     public void exit() {

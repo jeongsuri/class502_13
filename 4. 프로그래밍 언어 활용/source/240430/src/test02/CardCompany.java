@@ -5,12 +5,12 @@ public class CardCompany {
     private CardCompany(){}
 
     public static CardCompany getInstance() {
-        /*
+
         if(instance == null){
             instance = new CardCompany();
         }
 
-         */
+
         return instance;
     }
 
