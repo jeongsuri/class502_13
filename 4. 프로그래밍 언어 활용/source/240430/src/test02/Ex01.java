@@ -1,6 +1,38 @@
-package test02;
+/*
+public class Card {
+    private int cardId;
+    private static int cardSiralNumber = 1000;
 
-import java.util.Comparator;
+    public Card(){
+        cardSiralNumber++;
+        cardId = cardSiralNumber;
+    }
+
+    public int getCardId() {
+        return cardId;
+    }
+
+}
+
+public class CardCompany {
+    private static CardCompany instance = new CardCompany();
+    private CardCompany(){}
+
+    public static CardCompany getInstance() {
+
+        if(instance == null){
+            instance = new CardCompany();
+        }
+
+
+        return instance;
+    }
+
+    public static Card createCard(){
+        Card card = new Card();
+        return card;
+    }
+}
 
 public class Ex01 {
     public static void main(String[] args) {
@@ -11,3 +43,5 @@ public class Ex01 {
         System.out.println(card2.getCardId());
     }
 }
+*/
+

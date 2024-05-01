@@ -1,3 +1,4 @@
+
 package test01;
 
 public class Card {
@@ -12,5 +13,4 @@ public class Card {
     public int getCardId() {
         return cardId;
     }
-
 }

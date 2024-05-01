@@ -1,5 +1,7 @@
 package test01;
 
+
+
 public class Ex01 {
     public static void main(String[] args) {
         Card card1 = new Card();
