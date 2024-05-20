@@ -21,8 +21,15 @@ public class Ex04 {
         th1.setPriority(Thread.MAX_PRIORITY);
         th2.setPriority(Thread.MIN_PRIORITY);
         System.out.printf("th1 : %d, th2 : %d",th1.getPriority(), th2.getPriority());
+
         th1.start();
         th2.start();
+        try {
+            th1.join();
+            th2.join();
+        }catch(InterruptedException e){};
+
+        System.out.println("작업 종료!"); //메인쓰레드
 
     }
 }
