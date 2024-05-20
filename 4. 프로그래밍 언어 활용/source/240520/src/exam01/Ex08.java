@@ -10,6 +10,7 @@ public class Ex08 {
         th2.start();
         th3.start();
 
+
         th1.start();
         th2.start();
         th3.start();
@@ -23,6 +24,7 @@ public class Ex08 {
         Thread.sleep(3000);
         th1.stop(); // 정지(종료)
         th2.stop(); // 정지(종료)
+        th2.stop();
 
         Thread.sleep(2000);
         th3.stop(); // 정지(종료)
