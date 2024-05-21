@@ -1,10 +1,38 @@
 package exam01;
 
 import member.Member;
+import org.junit.jupiter.api.Test;
+
+import java.time.LocalDateTime;
 
 public class Ex01 {
-    public static void main(String[] args) {
-        Member m1 = new Member();
-        m1.getEmail();
+    @Test
+    void test1(){
+        Member member = new Member();
+        member.setUserId("user01");
+        member.setUserNm("사용자01");
+        member.setEmail("user01@naver.com");
+        member.setRegDt(LocalDateTime.now());
+
+        System.out.println(member);
+
+    }
+    @Test
+    void test2(){
+        Member member1 = new Member();
+        member1.setUserId("user01");
+        member1.setUserNm("사용자01");
+        member1.setEmail("user01@naver.com");
+        member1.setRegDt(LocalDateTime.now());
+
+        Member member2 = new Member();
+        member2.setUserId("user01");
+        member2.setUserNm("사용자01");
+        member2.setEmail("user01@naver.com");
+        member2.setRegDt(LocalDateTime.now());
+
+        System.out.println(member1.equals(member2));
+        System.out.println(member1.hashCode());
+        System.out.println(member2.hashCode());
     }
 }
