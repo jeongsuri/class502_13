@@ -24,7 +24,6 @@ public class Ex08 {
         Thread.sleep(3000);
         th1.stop(); // 정지(종료)
         th2.stop(); // 정지(종료)
-        th2.stop();
 
         Thread.sleep(2000);
         th3.stop(); // 정지(종료)
