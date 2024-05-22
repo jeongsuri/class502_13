@@ -1,6 +1,5 @@
 package exam01;
 
-
 import lombok.Data;
 
 @Data
