@@ -3,17 +3,27 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mappers.MemberMapper"> <!--현재파일경로-->
-    <select id="getList" resultType="member.Member"> <!--클래스경로-->
+    <resultMap id="memberMap" type="member.Member"> <!--멤버클래스의 변수명을 map처리하여 오라클과 동일하게만듬-->
+        <result column="USER_NO" property="userNo" />
+        <result column="USER_ID" property="userId" />
+        <result column="USER_PW" property="userPw" />
+        <result column="USER_NM" property="userNm" />
+        <result column="MOBILE" property="mobile" />
+        <result column="REG_DT" property="regDt" />
+        <result column="MOD_DT" property="modDt" />
+    </resultMap>
+
+    <select id="getList" resultMap="memberMap"><!--클래스경로  or 매퍼된변수이름-->
         SELECT * FROM MEMBER
     </select>
     <!--
-    <insert id="">
+    <insert>
 
     </insert>
-    <update id="">
+    <update>
 
     </update>
-    <delete id="">
+    <delete>
 
     </delete>
     -->
