@@ -13,6 +13,7 @@ public interface MemberMapper {
     List<Member> getList2();
 
     int register(Member member);
+    int register2(Member member); //시퀀스 값 넣는거
 
     int modify(Member member);
 
@@ -21,5 +22,6 @@ public interface MemberMapper {
     @Delete("DELETE FROM MEMBER WHERE USER_ID = #{userID}")
         //간단한 쿼리는 mappers.membermappe에 정의하기보다는 두곳에 정의하기보다는 여기서 정의하여 바로 사용
     int delete2(String userId);
+
 
 }

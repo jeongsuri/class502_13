@@ -21,8 +21,13 @@
         VALUES (SEQ_MEMBER.NEXTVAL, #{userId}, #{userPw}, #{userNm}, #{mobile})
     </insert>
     <insert id="register2">
+        <selectKey keyProperty="userNo" order="BEFORE" resultType="long">
+            <!-- 시퀀스객체에 값을 넣을수 있게함.  insert쿼리를 수행하기 전에 먼저 수행해야하기 때문에 BEFORE -->
+            SELECT SEQ_MEMBER.NEXTVAL FROM DUAL
+        </selectKey>
         INSERT INTO MEMBER (USER_NO, USER_ID, USER_PW, USER_NM, MOBILE)
-        VALUES (SEQ_MEMBER.NEXTVAL, #{userId}, #{userPw}, #{userNm}, #{mobile})
+        VALUES (#{userNo}, #{userId}, #{userPw}, #{userNm}, #{mobile})
+        <!-- SELECT SEQ_MEMBER.NEXTVAL FROM DUAL을통해 가져온 시퀀스값을 userno에 넣음 -->
     </insert>
     <update id="modify">
         UPDATE MEMBER

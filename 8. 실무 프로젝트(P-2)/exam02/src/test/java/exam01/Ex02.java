@@ -21,8 +21,9 @@ public class Ex02 {
                 mobile("01000000000").
                 build();//빌더패턴 사용
 
-        int cnt = mapper.register(member);
+        //int cnt = mapper.register(member);
         //int cnt = session.insert("mappers.MemberMapper.register", member);
+        int cnt = mapper.register2(member);
         System.out.println(cnt);
         System.out.println(member);
     }
