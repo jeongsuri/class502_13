@@ -24,4 +24,12 @@ public class Ex01 {
         List<Member> members = mapper.getList();
         members.forEach(System.out::println);
     }
+
+    @Test
+    void test3(){
+        SqlSession session = DBConn.getSession();
+        MemberMapper mapper = session.getMapper(MemberMapper.class);
+        List<Member> members = mapper.getList2();
+        members.forEach(System.out::println);
+    }
 }

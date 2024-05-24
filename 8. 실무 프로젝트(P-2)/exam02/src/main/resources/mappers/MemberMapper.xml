@@ -16,9 +16,10 @@
     <select id="getList" resultMap="memberMap"><!--클래스경로  or 매퍼된변수이름-->
         SELECT * FROM MEMBER
     </select>
-    <!--
-    <insert>
 
+    <insert id="register">
+        INSERT INTO MEMBER (USER_NO, USER_ID, USER_PW, USER_NM, MOBILE)
+        VALUES (SEQ_MEMBER.NEXTVAL, #{userId}, #{userPw}, #{userNm}, #{mobile});
     </insert>
     <update>
 
@@ -26,5 +27,5 @@
     <delete>
 
     </delete>
-    -->
+
 </mapper>
