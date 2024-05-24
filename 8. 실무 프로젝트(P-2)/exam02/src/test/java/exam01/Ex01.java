@@ -32,4 +32,6 @@ public class Ex01 {
         List<Member> members = mapper.getList2();
         members.forEach(System.out::println);
     }
+
+
 }

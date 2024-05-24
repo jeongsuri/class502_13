@@ -1,11 +1,13 @@
 package member;
 
+import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
+@Builder
 public class Member {
     private long userNo;
     private String userId;
