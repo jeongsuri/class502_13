@@ -3,13 +3,17 @@ package exam01;
 import configs.DBConn;
 import game.Game;
 import game.Register;
+import game.Score;
+import mappers.ScoreMapper;
 import member.Member;
 import org.apache.ibatis.session.SqlSession;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        SqlSession session = DBConn.getSession();
         Scanner sc = new Scanner(System.in);
         Game game = new Game();
         String userId = null;
@@ -31,6 +35,18 @@ public class Main {
                     game.gameStrat();
                 case 2:
                     System.out.println("랭킹확인");
+
+                    System.out.println("전체랭킹");
+                    List<Score> scores1 = session.selectList("mappers.ScoreMapper.allScore");
+                    scores1.forEach(System.out::println);
+
+                    System.out.println("본인랭킹");
+                    ScoreMapper mapper = session.getMapper(ScoreMapper.class);
+                    Score score = Score.builder()
+                            .userId(userId)
+                            .build();
+                    List<Score> scores2 = mapper.myScore(score);
+                    scores2.forEach(System.out::println);
                 case 3:
                     System.out.println("종료");
             }

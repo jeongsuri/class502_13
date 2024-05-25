@@ -7,7 +7,20 @@
         <result column="SCORE" property="score" />
         <result column="USER_ID" property="userId" />
     </resultMap>
-    <select id="getList" resultMap="scoreMap"><!--클래스경로  or 매퍼된변수이름-->
-        SELECT * FROM SCORE_GAME
+    <select id="allScore" resultMap="scoreMap"><!--클래스경로  or 매퍼된변수이름-->
+        SELECT *
+        FROM SCORE_GAME
+        WHERE ROWNUM &lt;= 10
+        ORDER BY SCORE DESC
+    </select>
+    <select id="myScore" resultMap="scoreMap"><!--클래스경로  or 매퍼된변수이름-->
+        SELECT *
+        FROM SCORE_GAME
+        <where>
+            <if test="userId != null">
+                USER_ID = #{userId}
+            </if>
+        </where>
+        ORDER BY SCORE DESC
     </select>
 </mapper>

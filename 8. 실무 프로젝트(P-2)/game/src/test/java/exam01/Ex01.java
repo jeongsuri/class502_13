@@ -3,6 +3,7 @@ package exam01;
 import configs.DBConn;
 import game.Score;
 import mappers.MemberMapper;
+import mappers.ScoreMapper;
 import member.Member;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.jupiter.api.Test;
@@ -49,7 +50,17 @@ public class Ex01 {
 
     @Test
     public void test4(){ //전체 랭킹조회
-        List<Score> scores = session.selectList("mappers.ScoreMapper.getList");
+        List<Score> scores = session.selectList("mappers.ScoreMapper.allScore");
+        scores.forEach(System.out::println);
+    }
+
+    @Test
+    public void test5(){ //내 랭킹조회
+        ScoreMapper mapper = session.getMapper(ScoreMapper.class);
+        Score score = Score.builder()
+                .userId("test3")
+                .build();
+        List<Score> scores = mapper.myScore(score);
         scores.forEach(System.out::println);
     }
 
