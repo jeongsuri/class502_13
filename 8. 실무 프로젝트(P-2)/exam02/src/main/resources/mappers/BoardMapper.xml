@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.BoardMapper"> <!--현재파일경로-->
+    <resultMap id="boardMap" type="board.Board"> <!--멤버클래스의 변수명을 map처리하여 오라클과 동일하게만듬-->
+        <result column="SEQ" property="seq" />
+        <result column="POSTER" property="poster" />
+        <result column="SUBJECT" property="subject" />
+        <result column="CONTENT" property="content" />
+        <result column="REG_DT" property="regDt" />
+        <result column="MOD_DT" property="modDt" />
+    </resultMap>
+
+    <select id="getList" resultMap="memberMap"><!--클래스경로  or 매퍼된변수이름-->
+        SELECT * FROM MEMBER
+    </select>
+    <!--
+    <insert>
+
+    </insert>
+    <update>
+
+    </update>
+    <delete>
+
+    </delete>
+    -->
+</mapper>

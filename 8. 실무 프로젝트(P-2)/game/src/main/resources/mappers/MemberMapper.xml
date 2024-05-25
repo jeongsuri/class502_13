@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.MemberMapper"> <!--현재파일경로-->
+    <resultMap id="memberMap" type="member.Member"> <!--멤버클래스의 변수명을 map처리하여 오라클과 동일하게만듬-->
+        <result column="USER_ID" property="userId" />
+    </resultMap>
+    <select id="getList" resultMap="memberMap"><!--클래스경로  or 매퍼된변수이름-->
+        SELECT * FROM MEMBER_GAME
+    </select>
+    <select id="getList2" resultMap="memberMap"><!--클래스경로  or 매퍼된변수이름-->
+        SELECT * FROM MEMBER_GAME
+        <where>
+            <if test="userId != null">
+                USER_ID = #{userId}
+            </if>
+        </where>
+    </select>
+    <insert id="register">
+        INSERT INTO MEMBER_GAME (USER_ID)
+        VALUES (#{userId})
+    </insert>
+</mapper>

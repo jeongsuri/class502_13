@@ -5,9 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aabcc77a-9d87-41de-98ce-816c9769a0d7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/board/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/BoardMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/BoardMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/exam01/Ex03.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../game/src/main/java/configs/DBConn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../game/src/main/java/mappers/MemberMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../game/src/main/resources/configs/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../game/src/main/resources/mappers/MemberMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mappers/MemberMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/MemberMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/MemberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/MemberMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/exam01/Ex02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/exam01/Ex02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../game/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../game/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../game/src/main/java/exam01/Game1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../game/src/main/java/exam01/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../game/src/main/java/exam01/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../game/src/main/java/exam01/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../game/src/test/java/exam01/Ex01.java" beforeDir="false" afterPath="$PROJECT_DIR$/../game/src/test/java/exam01/Ex01.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,11 +31,21 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -42,45 +64,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Ex01.test1.executor": "Run",
-    "Gradle.Ex01.test2.executor": "Run",
-    "Gradle.Ex01.test3.executor": "Run",
-    "Gradle.Ex02.test1.executor": "Run",
-    "Gradle.Ex02.test2.executor": "Run",
-    "Gradle.Ex02.test3.executor": "Run",
-    "Gradle.Ex02.test4.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Ex01.test1.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Ex01.test2.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Ex01.test3.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Ex02.test1.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Ex02.test2.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Ex02.test3.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Ex02.test4.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Ex03.test1.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Ex03.test2.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Ex03.test3.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Gradle.Ex02.test1">
-    <configuration name="Ex01.test2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;exam01.Ex01.test2&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
+}</component>
+  <component name="RunManager" selected="Gradle.Ex03.test2">
     <configuration name="Ex02.test1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -95,54 +96,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;exam01.Ex02.test1&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="Ex02.test2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;exam01.Ex02.test2&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="Ex02.test3" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;exam01.Ex02.test3&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -177,13 +130,85 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="Ex03.test1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;exam01.Ex03.test1&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Ex03.test2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;exam01.Ex03.test2&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Ex03.test3" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;exam01.Ex03.test3&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Ex03.test2" />
+        <item itemvalue="Gradle.Ex03.test3" />
+        <item itemvalue="Gradle.Ex03.test1" />
         <item itemvalue="Gradle.Ex02.test1" />
         <item itemvalue="Gradle.Ex02.test4" />
-        <item itemvalue="Gradle.Ex02.test3" />
-        <item itemvalue="Gradle.Ex02.test2" />
-        <item itemvalue="Gradle.Ex01.test2" />
       </list>
     </recent_temporary>
   </component>
@@ -209,6 +234,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/exam01/Ex03.java</url>
+          <line>15</line>
+          <properties class="exam01.Ex03" method="test1">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

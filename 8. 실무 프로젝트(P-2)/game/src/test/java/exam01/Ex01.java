@@ -1,43 +1,56 @@
 package exam01;
 
+import configs.DBConn;
+import game.Score;
+import mappers.MemberMapper;
+import member.Member;
+import org.apache.ibatis.session.SqlSession;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Ex01 {
+    private SqlSession session = DBConn.getSession();
+    @Test
+    public void test1(){ //전체 회원조회
+        List<Member> members = session.selectList("mappers.MemberMapper.getList");
+        members.forEach(System.out::println);
+    }
+
 
     @Test
-    public void Login(){
-        System.out.println("닉네임을 입력하세요 : ");
-        Scanner sc = new Scanner(System.in);
-        Member member = new Member();
-        try {
-            member.setUserId(sc.next());
-        }catch(NoSuchElementException e) {
-            e.printStackTrace();
-        }
-
+    public void test2(){ //가입
+        MemberMapper mapper = session.getMapper(MemberMapper.class);
+        Member member = Member.builder()
+                .userId("test153")
+                .build();
+        int cnt = mapper.register(member);
+        System.out.println(cnt);
     }
 
     @Test
-    public void game1(){
-        int score = 0;
-        int me = 0;
-        int you;
-        //가위 바위 보
-        //      1   2   3
-        //이기는거3   1   2
-        //지는거 2   3   1
-        //435,354
+    public void test3(){ //회원 유무조회 후 가입
+        MemberMapper mapper = session.getMapper(MemberMapper.class);
+        Member member = Member.builder()
+                .userId("test156")
+                .build();
+        List<Member> members = mapper.getList2(member);
+        if(members.isEmpty() == true){
+            mapper.register(member);
+            System.out.println("가입완료");
 
-        Random random = new Random();
-        //Scanner sc = new Scanner(System.in);
-        System.out.println("묵찌빠게임 시작");
-        System.out.print("가위바위보 : ");
-        //me = sc.nextInt();
-        you = random.nextInt(2);
+        }else{
+            System.out.println("존재합니다.");
+        }
+    }
+
+    @Test
+    public void test4(){ //전체 랭킹조회
+        List<Score> scores = session.selectList("mappers.ScoreMapper.getList");
+        scores.forEach(System.out::println);
     }
 
 }
