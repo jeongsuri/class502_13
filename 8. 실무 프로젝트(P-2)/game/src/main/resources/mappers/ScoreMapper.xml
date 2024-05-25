@@ -23,4 +23,8 @@
         </where>
         ORDER BY SCORE DESC
     </select>
+    <insert id="insertScore">
+        INSERT INTO SCORE_GAME
+        VALUES (#{score}, #{userId})
+    </insert>
 </mapper>

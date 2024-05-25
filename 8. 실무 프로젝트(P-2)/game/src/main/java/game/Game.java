@@ -19,11 +19,12 @@ public class Game {
         int me = 0;
         int you;
 
-        System.out.print("가위바위보 : ");
-        me = sc.nextInt();
-        you = random.nextInt(2) + 1;
+
 
         while (true) {
+            System.out.print("가위바위보 : ");
+            me = sc.nextInt();
+            you = random.nextInt(2) + 1;
             if (me != you) {
                 if (2 * me + you == 5 || 2 * me + you == 8) {
                     System.out.println("내가낸거 : " + me);
@@ -57,9 +58,6 @@ public class Game {
                 System.out.println("내가낸거 : " + me);
                 System.out.println("상대가 낸거 : " + you);
                 System.out.println("비겼습니다.");
-                System.out.print("가위바위보 : ");
-                me = sc.nextInt();
-                you = random.nextInt(2) + 1;
             }
         }
         System.out.println(score);

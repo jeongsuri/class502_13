@@ -32,7 +32,12 @@ public class Main {
             System.out.print("수행하고자 하는 숫자 입력하세요 : ");
             switch (sc.nextInt()){
                 case 1:
-                    game.gameStrat();
+                    ScoreMapper mapper1 = session.getMapper(ScoreMapper.class);
+                    Score score1 = Score.builder()
+                            .score(game.gameStrat())
+                            .userId(userId)
+                            .build();
+                    int cnt = mapper1.insertScore(score1);
                 case 2:
                     System.out.println("랭킹확인");
 
@@ -41,14 +46,15 @@ public class Main {
                     scores1.forEach(System.out::println);
 
                     System.out.println("본인랭킹");
-                    ScoreMapper mapper = session.getMapper(ScoreMapper.class);
-                    Score score = Score.builder()
+                    ScoreMapper mapper2 = session.getMapper(ScoreMapper.class);
+                    Score score2 = Score.builder()
                             .userId(userId)
                             .build();
-                    List<Score> scores2 = mapper.myScore(score);
+                    List<Score> scores2 = mapper2.myScore(score2);
                     scores2.forEach(System.out::println);
                 case 3:
                     System.out.println("종료");
+                    break;
             }
 
         }

@@ -8,4 +8,5 @@ import java.util.List;
 public interface ScoreMapper {
     List<Score> allScore();
     List<Score> myScore(Score score);
+    int insertScore(Score score);
 }

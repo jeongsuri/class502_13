@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8196d337-ff5a-45b6-8ba3-ae00d0c8f597" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../4. 프로그래밍 언어 활용/source/240520/src/exam01/Ex09.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/exam02/Ex01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../game/src/main/java/exam01/Game1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../game/src/main/java/exam01/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../game/src/main/java/exam01/Member.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../game/src/test/java/exam01/Ex01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/configs/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configs/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/MemberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/MemberMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/exam01/Ex02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/exam01/Ex02.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exam02/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../exam02/build.gradle" afterDir="false" />
-    </list>
+    <list default="true" id="8196d337-ff5a-45b6-8ba3-ae00d0c8f597" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -36,7 +36,7 @@ public class Ex01 {
     public void test3(){ //회원 유무조회 후 가입
         MemberMapper mapper = session.getMapper(MemberMapper.class);
         Member member = Member.builder()
-                .userId("test156")
+                .userId("test10")
                 .build();
         List<Member> members = mapper.getList2(member);
         if(members.isEmpty() == true){
@@ -62,6 +62,16 @@ public class Ex01 {
                 .build();
         List<Score> scores = mapper.myScore(score);
         scores.forEach(System.out::println);
+    }
+
+    @Test
+    public void test6(){ //점수 저장
+        ScoreMapper mapper = session.getMapper(ScoreMapper.class);
+        Score score = Score.builder()
+                .score(10)
+                .userId("test10")
+                .build();
+        int cnt = mapper.insertScore(score);
     }
 
 }

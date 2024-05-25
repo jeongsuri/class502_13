@@ -5,20 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aabcc77a-9d87-41de-98ce-816c9769a0d7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/board/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/BoardMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/BoardMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/exam01/Ex03.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../game/src/main/java/configs/DBConn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../game/src/main/java/mappers/MemberMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../game/src/main/resources/configs/mybatis-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../game/src/main/resources/mappers/MemberMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mappers/MemberMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/MemberMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/MemberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/MemberMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../game/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../game/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../game/src/main/java/exam01/Game1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../game/src/main/java/exam01/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../game/src/main/java/exam01/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../game/src/main/java/exam01/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exam01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../exam01/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../game/src/main/java/mappers/ScoreMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../game/src/main/java/mappers/ScoreMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../game/src/main/resources/mappers/ScoreMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../game/src/main/resources/mappers/ScoreMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../game/src/test/java/exam01/Ex01.java" beforeDir="false" afterPath="$PROJECT_DIR$/../game/src/test/java/exam01/Ex01.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -222,6 +211,17 @@
       <updated>1716509218637</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
