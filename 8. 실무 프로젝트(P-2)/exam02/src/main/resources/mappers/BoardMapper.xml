@@ -11,19 +11,45 @@
         <result column="REG_DT" property="regDt" />
         <result column="MOD_DT" property="modDt" />
     </resultMap>
-
-    <select id="getList" resultMap="memberMap"><!--클래스경로  or 매퍼된변수이름-->
-        SELECT * FROM MEMBER
+<!--정확한검색-->
+    <select id="getList" resultMap="boardMap"><!--클래스경로  or 매퍼된변수이름-->
+        SELECT * FROM BOARD
+        <trim prefix="WHERE" prefixOverrides="AND | OR">
+            <if test="subject != null">
+                SUBJECT LIKE #{subject}
+            </if>
+            <if test="content != null">
+                AND CONTENT LIKE #{content}
+            </if>
+        </trim>
     </select>
-    <!--
-    <insert>
-
+<!--포함검색-->
+    <select id="getList2" resultMap="boardMap"><!--클래스경로  or 매퍼된변수이름-->
+        <bind name="P_subject" value="'%' + _parameter.getSubject() + '%'" />
+        <bind name="P_content" value ="'%' + _parameter.getContent() + '%'" />
+        SELECT * FROM BOARD
+        <where>
+            <if test="subject != null">
+                SUBJECT LIKE #{P_subject}
+            </if>
+            <if test="content != null">
+                AND CONTENT LIKE #{P_content}
+            </if>
+        </where>
+    </select>
+<!-- 게시글번호로 조회-->
+    <select id="getList3" resultMap="boardMap">
+    SELECT * FROM BOARD
+        <where>
+            SEQ = #{seq}
+        </where>
+    </select>
+<!-- 게시글작성 -->
+    <insert id="writeBoard">
+        INSERT INTO BOARD (SEQ, POSTER, SUBJECT, CONTENT)
+        VALUES(SEQ_BOARD.NEXTVAL, #{poster}, #{subject}, #{content})
     </insert>
-    <update>
 
-    </update>
-    <delete>
 
-    </delete>
-    -->
+
 </mapper>

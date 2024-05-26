@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mappers.MemberMapper"> <!--현재파일경로-->
-    <resultMap id="memberMap" type="member.Member"> <!--멤버클래스의 변수명을 map처리하여 오라클과 동일하게만듬-->
+<mapper namespace="mappers.MemberMapper">
+    <resultMap id="memberMap" type="member.Member">
         <result column="USER_NO" property="userNo" />
         <result column="USER_ID" property="userId" />
         <result column="USER_PW" property="userPw" />
@@ -16,25 +16,25 @@
     <select id="getList" resultMap="memberMap"><!--클래스경로  or 매퍼된변수이름-->
         SELECT * FROM MEMBER
     </select>
-
-    <select id="getList3" resultMap="memberMap">
-        SELECT * FROM MEMBER
-        <trim prefix="WHERE" prefixOverrides="AND | OR">
-            <if test="userId != null">
-                USER_ID = #{userId}
-            </if>
-            <if test="userNm != null">
-                AND USER_NM LIKE #{userNm}
-            </if>
-            <if test="mobile != null">
-                AND MOBILE LIKE #{mobile}
-            </if>
-        </trim>
-    </select>
-
+    <!--
+       <select id="getList3" resultMap="memberMap">
+           SELECT * FROM MEMBER
+           <trim prefix="WHERE" prefixOverrides="AND | OR">
+               <if test="userId != null">
+                   USER_ID = #{userId}
+               </if>
+               <if test="userNm != null">
+                   AND USER_NM LIKE #{userNm}
+               </if>
+               <if test="mobile != null">
+                   AND MOBILE LIKE #{mobile}
+               </if>
+           </trim>
+       </select>
+   -->
     <select id="getList3" resultMap="memberMap">
         <bind name="P_userNm" value="'%' + _parameter.getUserNm() + '%'" />
-<!--        _parameter은 MemberMapper인터페이스를 가르킨다.-->
+   <!--        _parameter은 MemberMapper인터페이스를 가르킨다.-->
         <bind name="P_mobile" value="'%' + _parameter.getMobile() + '%'" />
         SELECT * FROM MEMBER
         <where>

@@ -4,13 +4,13 @@
         "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <properties>
-        <property name="driver" value="oracle.jdbc.driver.OracleDriver"/><!--오라클 드라이버 설정-->
-        <property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"/><!--url 설정-->
-        <property name="username" value="STUDY"/><!--username설정-->
-        <property name="password" value="oracle"/><!--password설정-->
+        <property name="driver" value="oracle.jdbc.driver.OracleDriver" />
+        <property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" />
+        <property name="username" value="STUDY" />
+        <property name="password" value="oracle" />
     </properties>
     <settings>
-        <setting name="logImpl" value="SLF4J"/> <!--log설정-->
+        <setting name="logImpl" value="SLF4J"/>
     </settings>
     <environments default="dev">
         <environment id="dev">
@@ -24,6 +24,7 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="mappers/MemberMapper.xml"/>
+        <mapper resource="mappers/MemberMapper.xml" />
+        <mapper resource="mappers/BoardMapper.xml" />
     </mappers>
 </configuration>

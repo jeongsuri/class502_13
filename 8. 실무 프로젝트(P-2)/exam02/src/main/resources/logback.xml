@@ -4,7 +4,7 @@
 
     <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%5level [%thread] - %msg%n</pattern>
+            <pattern>%d %5p %c{2} - %m%n</pattern>
         </encoder>
     </appender>
 
@@ -12,8 +12,7 @@
         <appender-ref ref="stdout"/>
     </root>
 
-    <logger name="mappers">  <!---->
+    <logger name="mappers">
         <level value="DEBUG"/>
     </logger>
-
 </configuration>
