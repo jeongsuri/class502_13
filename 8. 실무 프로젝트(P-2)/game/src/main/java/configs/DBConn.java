@@ -18,11 +18,9 @@ public class DBConn {
         }catch(IOException e){
             e.printStackTrace();
         }
-
     }
 
     public static SqlSession getSession(boolean autoCommit){ //커밋을 제어할수있는 메서드
-
         return factory.openSession(autoCommit); //기본값은 false이기 때문에 커밋하지않는다.
     }
 

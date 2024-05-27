@@ -30,7 +30,8 @@ public class Main {
         while(true){
             System.out.println("1.묵찌빠 2.랭킹확인 3.종료");
             System.out.print("수행하고자 하는 숫자 입력하세요 : ");
-            switch (sc.nextInt()){
+            int choose = sc.nextInt();
+            switch (choose){
                 case 1:
                     ScoreMapper mapper1 = session.getMapper(ScoreMapper.class);
                     Score score1 = Score.builder()

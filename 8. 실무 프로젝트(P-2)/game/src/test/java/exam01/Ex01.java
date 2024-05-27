@@ -8,10 +8,7 @@ import member.Member;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Ex01 {
     private SqlSession session = DBConn.getSession();
@@ -72,6 +69,19 @@ public class Ex01 {
                 .userId("test10")
                 .build();
         int cnt = mapper.insertScore(score);
+    }
+
+    @Test
+    public  void test7(){
+        String rock = "✊";
+        String scissor = "✌️";
+        String paper = "✋";
+
+        ArrayList<String> p1 = new ArrayList<>();
+        p1.add("✌️");
+        System.out.println(p1.get(0));
+
+
     }
 
 }
