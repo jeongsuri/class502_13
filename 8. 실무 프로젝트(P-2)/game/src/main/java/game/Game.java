@@ -5,6 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
+
     private String userid;
     private int game;
     Random random = new Random();
@@ -71,5 +72,7 @@ public class Game {
         }
         return score;
     }
+
+
 
 }
