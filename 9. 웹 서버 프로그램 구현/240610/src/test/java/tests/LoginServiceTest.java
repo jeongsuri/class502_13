@@ -54,9 +54,37 @@ public class LoginServiceTest {
     @Test
     @DisplayName("필수 항목(아이디, 비밀번호) 검증, 검증 실패시 ValidationException 발생")
     void requiredFieldTest() {
-        //아이디 필수 항목 검증
-        assertThrows(ValidationException.class, () -> {
-           loginService.process(request);
-        });
+        assertAll(
+                () -> requiredFieldEachTest("email", "이메일"),
+                () -> {
+                    setParamData("email", faker.internet().emailAddress());
+                            requiredFieldEachTest("password", "비밀번호");
+                });
+    }
+
+    void requiredFieldEachTest(String name, String message){
+        ValidationException thrown = assertThrows(ValidationException.class, () ->{
+            //null검증
+            loginService.process(request);
+
+            //빈값 검증
+            setParamData(name, "     ");
+            loginService.process(request);
+        }, message + " 테스트");
+
+        String msg = thrown.getMessage();
+        assertTrue(msg.contains(message), message+" 테스트");
+    }
+
+    @Test
+    @DisplayName("이메일로 회원이 조회 되는지 검증, 검증 실패시 ValidationException 발생")
+    void memberExistsTest(){
+
+    }
+
+    @Test
+    @DisplayName("비밀번호가 일치하는지 검증, 검증 실패시 PasswordMismatchException 발생 ")
+    void memberAuthTest(){
+
     }
 }
