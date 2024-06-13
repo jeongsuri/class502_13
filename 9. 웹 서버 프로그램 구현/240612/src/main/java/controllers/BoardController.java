@@ -17,5 +17,8 @@ public class BoardController extends HttpServlet {
         PrintWriter out = resp.getWriter();
         out.println("<h1>게시판</h1>");
         System.out.println("doGet()");
+
+        String id = req.getParameter("id");
+        System.out.println(id);
     }
 }
