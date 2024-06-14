@@ -17,7 +17,7 @@ public class NewsApi {
     private static final String CLIENT_SECRET = "yllhp759uT"; // 애플리케이션 등록 시 발급 받은 클라이언트 시크릿
 
     public static void main(String[] args) {
-        String query = "오징어"; // 검색어
+        String query = "중앙정보"; // 검색어
         String apiURL = "https://openapi.naver.com/v1/search/news.json?query=" + query;
 
         try {
