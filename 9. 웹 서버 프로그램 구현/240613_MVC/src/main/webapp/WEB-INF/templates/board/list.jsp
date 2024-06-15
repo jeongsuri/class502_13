@@ -5,7 +5,10 @@
 <ul>
     <c:forEach var="item" items = "${items}">
 <li>
-    ${item.subject} / ${item.poster} / ${item.regDt}
+    ${item.subject} / ${item.content} / ${item.poster} / ${item.regDt}
+    <div>
+        index: ${status.index} / count: ${status.count} / first : ${status.first} / last: ${status.last} / current : ${status.current}
+    </div>
 </li>
     </c:forEach>
 </ul>
