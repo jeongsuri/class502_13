@@ -22,6 +22,10 @@ public class BoardListController extends HttpServlet{
 
         req.setAttribute("items", items);
 
+        req.setAttribute("addCss", new String[]{"board/Style", "board/list"});
+        req.setAttribute("addScript", List.of("board/common", "board/list"));
+        //속성 설정은 RequestDispatcher 상단에 정의
+        //출력이 완료 되면 속성은 반영 X
         RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/templates/board/list.jsp");
         rd.forward(req, resp);
     }
