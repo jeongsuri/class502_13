@@ -26,6 +26,7 @@ public class JoinService {
         //비밀번호 해시화 - BCrypt
         String hash = BCrypt.hashpw(form.getPassword(), BCrypt.gensalt(12));
         Member member = new Member();
+        member.setEmail(form.getEmail());
         member.setPassword(hash);
         member.setUserName(form.getUserName());
 

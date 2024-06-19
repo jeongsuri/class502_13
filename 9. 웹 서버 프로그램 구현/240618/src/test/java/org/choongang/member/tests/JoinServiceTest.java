@@ -1,10 +1,9 @@
-
 package org.choongang.member.tests;
 
 import com.github.javafaker.Faker;
-import org.apache.ibatis.javassist.bytecode.DuplicateMemberException;
 import org.choongang.global.configs.DBConn;
 import org.choongang.global.exceptions.BadRequestException;
+import org.choongang.member.exceptions.DuplicatedMemberException;
 import org.choongang.member.controllers.RequestJoin;
 import org.choongang.member.entities.Member;
 import org.choongang.member.mapper.MemberMapper;
@@ -52,9 +51,10 @@ public class JoinServiceTest {
     void successTest() {
         RequestJoin form = getData();
         assertDoesNotThrow(() -> {
-            service.process(getData());
+            service.process(form);
         });
-        //가입된 이메일로 회원이 조회 되는지 체크
+
+        // 가입된 이메일로 회원이 조회 되는지 체크
         Member member = mapper.get(form.getEmail());
         assertEquals(form.getEmail(), member.getEmail());
     }
@@ -144,10 +144,10 @@ public class JoinServiceTest {
     @DisplayName("이미 가입된 메일인 경우 DuplicatedMemberException 발생")
     void duplicateEmailTest() {
         MemberServiceProvider provider = MemberServiceProvider.getInstance();
-        assertThrows(DuplicateMemberException.class, () -> {
+        assertThrows(DuplicatedMemberException.class, () -> {
             RequestJoin form = getData();
-            service.process(form);
-            service.process(form);
+            provider.joinService().process(form);
+            provider.joinService().process(form);
         });
     }
 }

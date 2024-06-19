@@ -1,7 +1,7 @@
 package org.choongang.member.validators;
 
 import org.choongang.global.exceptions.BadRequestException;
-import org.choongang.global.exceptions.DuplicatedMemberException;
+import org.choongang.member.exceptions.DuplicatedMemberException;
 import org.choongang.global.validators.EmailValidator;
 import org.choongang.global.validators.RequiredValidator;
 import org.choongang.global.validators.Validator;
