@@ -44,5 +44,6 @@ public class JoinValidator implements Validator<RequestJoin>, RequiredValidator,
 
         //이미 가입된 회원인지 체크
         checkTrue(mapper.exist(email) == 0L, new DuplicatedMemberException());
+
     }
 }

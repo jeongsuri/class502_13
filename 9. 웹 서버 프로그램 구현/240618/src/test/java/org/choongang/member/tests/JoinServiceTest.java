@@ -146,6 +146,13 @@ public class JoinServiceTest {
         MemberServiceProvider provider = MemberServiceProvider.getInstance();
         assertThrows(DuplicatedMemberException.class, () -> {
             RequestJoin form = getData();
+            //서비스 프로세스를 할경우
+            // MemberServiceProvider(객체조합기)는 JoinService클래스를 객체로 생성하는데
+            //객체 조합기는 싱글톤 패턴으로 생성되어지기 때문에 JoinService클래스 또한 한번만 생성되어진다.
+            //그렇기 때문에 checkTrue메서드의 값이 그대로 남아있다.
+            //해결하기 위해 MemberServiceProvider을 새로 생성해서 값이 초기화된 checkTrue메서드를 사용하게한다.
+            //service.process(form);
+            //service.process(form);
             provider.joinService().process(form);
             provider.joinService().process(form);
         });
