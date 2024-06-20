@@ -1,9 +1,10 @@
-package org.choongang.member.mapper;
+package org.choongang.member.tests;
 
 import com.github.javafaker.Faker;
 import org.apache.ibatis.session.SqlSession;
 import org.choongang.global.configs.DBConn;
 import org.choongang.member.entities.Member;
+import org.choongang.member.mapper.MemberMapper;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
