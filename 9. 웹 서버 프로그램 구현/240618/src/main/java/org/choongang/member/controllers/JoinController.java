@@ -14,6 +14,9 @@ import org.choongang.member.services.MemberServiceProvider;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import static org.choongang.global.MeesageUtil.alertError;
+import static org.choongang.global.MeesageUtil.go;
+
 @WebServlet("/member/join")
 public class JoinController extends HttpServlet {
     @Override
@@ -28,11 +31,10 @@ public class JoinController extends HttpServlet {
         try {
             JoinService service = MemberServiceProvider.getInstance().joinService();
             service.process(req);
+            go(req.getContextPath() + "/member/login","parent", resp);
+            //resp.sendRedirect(req.getContextPath() + "/member/login");
         }catch(CommonException e){
-            resp.setContentType("text/html;charset=utf-8");
-            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-            PrintWriter out = resp.getWriter();
-            out.printf("<script>alert('%s');history.back()</script>", e.getMessage()); //history.back() 뒤로가기
+            alertError(e, resp);
         }
     }
 }
