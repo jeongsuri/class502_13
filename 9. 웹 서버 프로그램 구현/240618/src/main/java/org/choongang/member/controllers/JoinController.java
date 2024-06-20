@@ -32,7 +32,7 @@ public class JoinController extends HttpServlet {
             resp.setContentType("text/html;charset=utf-8");
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             PrintWriter out = resp.getWriter();
-            out.printf("<script>alert('%s');</script>", e.getMessage());
+            out.printf("<script>alert('%s');history.back()</script>", e.getMessage()); //history.back() 뒤로가기
         }
     }
 }

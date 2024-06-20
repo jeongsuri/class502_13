@@ -47,4 +47,7 @@
     <jsp:invoke fragment="footer" />
 </footer>
 </body>
+<iframe>
+
+</iframe>
 </html>
