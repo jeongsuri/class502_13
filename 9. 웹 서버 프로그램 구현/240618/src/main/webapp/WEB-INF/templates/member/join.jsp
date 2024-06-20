@@ -1,10 +1,10 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
-<c:url var="actionUrl" value="/member/join"/>
+<c:url var="actionUrl" value="/member/join" />
 <layout:main title="회원가입">
     <h1>회원가입</h1>
-    <form method="post" action="{actionUrl}" autocomplete="off">
+    <form method="post" action="${actionUrl}" autocomplete="off">
         <dl>
             <dt>이메일</dt>
             <dd>
@@ -35,4 +35,5 @@
         </div>
         <button type="submit">가입하기</button>
     </form>
+
 </layout:main>

@@ -1,10 +1,11 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <c:url var="actionUrl" value="/member/login" />
+
 <layout:main title="로그인">
     <h1>로그인</h1>
-    <form method="post" action="${actionUrl}" autocomplete="off">
+    <form method="POST" action="${actionUrl}" autocomplete="off">
         <dl>
             <dt>이메일</dt>
             <dd>

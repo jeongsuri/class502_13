@@ -12,7 +12,6 @@
         <result column="MOD_DT" property="modDt" />
     </resultMap>
 
-<!--중복여부조화-->
     <select id="exist" resultType="long">
         SELECT COUNT(*) FROM MEMBER WHERE EMAIL=#{email}
     </select>
@@ -20,7 +19,7 @@
     <select id="get" resultMap="memberMap">
         SELECT * FROM MEMBER WHERE EMAIL=#{email}
     </select>
-<!--회원가입-->
+
     <insert id="register">
         INSERT INTO MEMBER (USER_NO, EMAIL, PASSWORD, USER_NAME)
         VALUES (SEQ_MEMBER.NEXTVAL, #{email}, #{password}, #{userName})

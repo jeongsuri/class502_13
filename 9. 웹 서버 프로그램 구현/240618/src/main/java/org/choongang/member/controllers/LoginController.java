@@ -11,17 +11,15 @@ import java.io.IOException;
 
 @WebServlet("/member/login")
 public class LoginController extends HttpServlet {
-
-    //- GET : 로그인 양식
-    //- POST : 로그인 양식처리
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/templates/member/login.jsp");
         rd.forward(req, resp);
-
     }
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
     }
 }

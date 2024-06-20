@@ -23,8 +23,9 @@ public class DBConn {
     }
 
     public static SqlSession getSession(boolean autoCommit) {
-        String mode = System.getenv("mode"); //환경변수 - 테스트일때 autocommit false하기 위해서
-        if(mode != null && mode.equals("test")) autoCommit = false;
+        String mode = System.getenv("mode");
+        if (mode != null && mode.equals("test")) autoCommit = false;
+
         return factory.openSession(autoCommit);
     }
 

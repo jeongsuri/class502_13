@@ -6,4 +6,5 @@ public interface MemberMapper {
     long exist(String email);
     Member get(String email);
     int register(Member member);
+
 }
