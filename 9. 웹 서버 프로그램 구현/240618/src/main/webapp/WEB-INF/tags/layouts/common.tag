@@ -47,7 +47,5 @@
     <jsp:invoke fragment="footer" />
 </footer>
 </body>
-<iframe>
-
-</iframe>
+<iframe name="ifrmProcess" calss="dn"></iframe>
 </html>
