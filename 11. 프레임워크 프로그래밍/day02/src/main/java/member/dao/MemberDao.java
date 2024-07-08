@@ -1,14 +1,13 @@
 package member.dao;
 
-import exam01.member.entities.Member;
-import org.springframework.stereotype.Component;
+import member.entities.Member;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Component
+
 public class MemberDao { // memberDao - 빈 이름
 
     private static Map<String, Member> members = new HashMap<>();
