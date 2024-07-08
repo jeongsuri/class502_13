@@ -13,12 +13,12 @@ import java.util.Optional;
 
 @Service
 public class InfoService {
+    @Autowired
     private MemberDao memberDao;
 
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yy.MM.dd");
 
     @Autowired
-
     public void setMemberDao(Optional<MemberDao> opt) {
         this.memberDao = opt.get();
     }
@@ -33,7 +33,7 @@ public class InfoService {
 
     @Autowired
     public void setFormatter(@Nullable DateTimeFormatter formatter) {
-        System.out.println("호출!");
+        //System.out.println("호출!");
         this.formatter = formatter;
     }
 

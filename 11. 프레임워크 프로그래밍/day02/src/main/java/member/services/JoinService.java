@@ -1,11 +1,11 @@
 package member.services;
 
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import member.controllers.RequestJoin;
 import member.dao.MemberDao;
 import member.entities.Member;
 import member.validators.JoinValidator;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -14,10 +14,19 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class JoinService {
 
+    private final JoinValidator validator;
 
-    private  JoinValidator validator;
-
+    @NonNull
     private MemberDao memberDao;
+
+
+    /*
+    private JoinService(JoinValidator validator, MemberDao memberDao) {
+        this.validator = validator;
+        this.memberDao = memberDao;
+    }
+     */
+
 
 
     public void process(RequestJoin form) {
