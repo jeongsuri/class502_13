@@ -15,12 +15,16 @@ public class ProxyCache {
 
     private Map<Long, Object> data = new HashMap<>();
 
+    /*
     @Pointcut("execution(* exam01..*(..))")
     public void publicTarget(){
 
     }
 
     @Around("publicTarget()")
+     */
+    //@Around("config.CommonPointcut.publicTarget()")
+    @Around("CommonPointcut.publicTarget()") // 같은 패키지에 있을 경우 패키지명 생략가능
     public Object process(ProceedingJoinPoint joinPoint) throws Throwable {
         Object[] args = joinPoint.getArgs();
         Long num = (Long)args[0]; //첫번째 인자값
