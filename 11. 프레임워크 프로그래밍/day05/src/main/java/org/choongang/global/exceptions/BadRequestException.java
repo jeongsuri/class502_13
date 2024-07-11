@@ -1,7 +1,9 @@
 package org.choongang.global.exceptions;
 
-public class BadRequestException extends CommonException{
+import org.springframework.http.HttpStatus;
+
+public class BadRequestException extends CommonException {
     public BadRequestException(String message) {
-        super(message);
+        super(message, HttpStatus.BAD_REQUEST); // 400
     }
 }
