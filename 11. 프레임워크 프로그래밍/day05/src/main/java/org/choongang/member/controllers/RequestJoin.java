@@ -12,5 +12,6 @@ public class RequestJoin {
     private String userName;
     private List<String> hobby;
     private boolean agree;
+
     private Address addr;
 }
