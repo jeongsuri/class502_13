@@ -10,7 +10,8 @@ public class RequestJoin {
     private String password;
     private String confirmPassword;
     private String userName;
-    private List<String> hobby;
+    //private List<String> hobby;
+    private String hobby;
     private boolean agree;
 
     private Address addr;
