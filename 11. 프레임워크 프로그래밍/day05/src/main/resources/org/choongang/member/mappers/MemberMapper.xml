@@ -10,7 +10,6 @@
         <result column="USER_NAME" property="userName" />
         <result column="REG_DT" property="regDt" />
     </resultMap>
-
     <insert id="register">
         INSERT INTO MEMBER (SEQ, EMAIL, PASSWORD, USER_NAME)
         VALUES (SEQ_MEMBER.NEXTVAL, #{email}, #{password}, #{userName})
@@ -22,5 +21,9 @@
 
     <select id="exists" resultType="int">
         SELECT COUNT(*) FROM MEMBER WHERE EMAIL = #{email}
+    </select>
+
+    <select id="login" resultType="int">
+        SELECT COUNT(*) FROM MEMBER WHERE EMAIL = #{email} AND PASSWORD = ${password}
     </select>
 </mapper>

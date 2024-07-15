@@ -13,23 +13,24 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class JoinService {
 
+
     private final MemberMapper mapper;
 
-    public void process(RequestJoin form){
+    public void process(RequestJoin form) {
 
-        //비밀번호 해시화
+        // 비밀번호 해시화
         String hash = BCrypt.hashpw(form.getPassword(), BCrypt.gensalt(12));
 
-        //DB 저장
+        // DB 저장
         Member member = Member.builder()
                 .email(form.getEmail())
                 .password(hash)
                 .userName(form.getUserName())
                 .build();
+
         int result = mapper.register(member);
-        if(result <= 1){
+        if (result < 1) {
             throw new BadRequestException("회원가입 실패");
         }
     }
-
 }
