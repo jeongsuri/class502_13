@@ -10,7 +10,7 @@
         </dt>
         <dd>
             <form:input path="email"/>
-            <form:errors path="email" element="div" delimiter=""/>
+            <form:errors path="email"/>
         </dd>
     </dl>
     <dl>
@@ -28,6 +28,7 @@
         </dt>
         <dd>
             <form:password path="confirmPassword" />
+            <form:errors path="confirmPassword"/>
         </dd>
     </dl>
     <dl>
@@ -36,6 +37,7 @@
         </dt>
         <dd>
             <form:input path="userName" />
+            <form:errors path="userName"/>
         </dd>
     </dl>
 
@@ -45,6 +47,7 @@
         </dt>
         <dd>
             <form:checkbox path="agree" value="true" label="회원가입 약관에 동의합니다." />
+            <form:errors path="agree" element="div" delimiter=""/>
         </dd>
     </dl>
     <button type="submit"><spring:message code="가입하기" /></button>
