@@ -3,14 +3,14 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <c:url var="actionUrl" value="/member/join" />
-
 <form:form method="POST" action="${actionUrl}" autocomplete="off" modelAttribute="requestJoin">
     <dl>
         <dt>
             <spring:message code="이메일" />
         </dt>
         <dd>
-            <form:input path="email" cssClass="input-txt" cssStyle="border-color: red;"/>
+            <form:input path="email"/>
+            <form:errors path="email" element="div" delimiter=""/>
         </dd>
     </dl>
     <dl>
@@ -19,6 +19,7 @@
         </dt>
         <dd>
             <form:password path="password" />
+            <form:errors path="password"/>
         </dd>
     </dl>
     <dl>
@@ -37,36 +38,7 @@
             <form:input path="userName" />
         </dd>
     </dl>
-    <%--
-    <dl>
-        <dt>취미</dt>
-        <dd>
-            <form:radiobuttons path="hobby" items="${hobbies2}" itemLabel="code" itemValue="value" />
-               <form:select path="hobby">
-                   <option value=''>- 선택하세요 -</option>
-                   <form:option value="hobby0" label="취미0" />
-                   <form:options items="${hobbies2}" itemLabel="code" itemValue="value" />
-               </form:select>
 
-
-               <form:select path="hobby">
-                   <option value=''>- 선택하세요 -</option>
-                   <form:options items="${hobbies}" />
-               </form:select>
-
-               <form:select path="hobby" items="${hobbies}" />
-               <form:checkboxes path="hobby" items="${hobbies}" />
-        </dd>
-    </dl>
-    <dl>
-        <dt>주소</dt>
-        <dd>
-            <form:input path="addr.zipCode" placeholder="우편번호" />
-            <form:input path="addr.address" placeholder="주소" />
-            <form:input path="addr.addressSub" placeholder="나머지 주소" />
-        </dd>
-    </dl>
-    --%>
     <dl>
         <dt>
             <spring:message code="약관동의" />
