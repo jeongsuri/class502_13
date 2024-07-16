@@ -11,7 +11,6 @@ import org.choongang.member.validators.JoinValidator;
 import org.choongang.member.validators.LoginValidator;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
@@ -77,9 +76,23 @@ public class MemberController {
         return "redirect:/member/login";
     }
 
+    @GetMapping("/list")
+    public String list(@Valid @ModelAttribute MemberSearch search, Errors errors){
+        log.info(search.toString());
 
+        return "member/list";
+    }
+
+    @ResponseBody
+    @GetMapping("/info/{id}/{id2}") //경로변수, 여러개도 가능.
+    public void info(@PathVariable("id") String email, @PathVariable("id2") String email2){
+        log.info("email: {}, email2: {}", email, email2);
+    }
+
+    /*
     @InitBinder
     public void initBinder(WebDataBinder binder) {
 
     }
+     */
 }
