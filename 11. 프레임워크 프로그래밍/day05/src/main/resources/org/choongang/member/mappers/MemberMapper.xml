@@ -22,8 +22,4 @@
     <select id="exists" resultType="int">
         SELECT COUNT(*) FROM MEMBER WHERE EMAIL = #{email}
     </select>
-
-    <select id="login" resultType="int">
-        SELECT COUNT(*) FROM MEMBER WHERE EMAIL = #{email} AND PASSWORD = ${password}
-    </select>
 </mapper>
