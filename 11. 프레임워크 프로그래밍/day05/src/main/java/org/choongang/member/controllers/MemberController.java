@@ -1,15 +1,19 @@
 package org.choongang.member.controllers;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.choongang.global.exceptions.BadRequestException;
 import org.choongang.member.entities.Member;
 import org.choongang.member.services.JoinService;
 import org.choongang.member.services.LoginService;
 import org.choongang.member.validators.JoinValidator;
 import org.choongang.member.validators.LoginValidator;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
@@ -79,15 +83,29 @@ public class MemberController {
     @GetMapping("/list")
     public String list(@Valid @ModelAttribute MemberSearch search, Errors errors){
         log.info(search.toString());
-
+        boolean result = false;
+        if(!result){
+            throw new BadRequestException("공습경보 공습경보");
+        }
         return "member/list";
     }
 
     @ResponseBody
-    @GetMapping("/info/{id}/{id2}") //경로변수, 여러개도 가능.
-    public void info(@PathVariable("id") String email, @PathVariable("id2") String email2){
+    @GetMapping({"/info/{id}/{id2}", "/info/{id}"}) //경로변수, 여러개도 가능.
+    public void info(@PathVariable("id") String email, @PathVariable(value = "id2", required = false) String email2){
         log.info("email: {}, email2: {}", email, email2);
     }
+
+
+    /*
+    @ExceptionHandler(Exception.class)
+    public String errorHandler(BadRequestException e, HttpServletRequest request, HttpServletResponse response, Model model){
+        e.printStackTrace();
+        log.info("MemberController에서 유입");
+     return "error/common";
+    }
+
+     */
 
     /*
     @InitBinder
