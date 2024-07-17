@@ -1,5 +1,6 @@
 package org.choongang.member.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,5 +25,7 @@ public class Member {
     @JsonIgnore
     private String password;
     private String userName;
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime regDt;
 }
