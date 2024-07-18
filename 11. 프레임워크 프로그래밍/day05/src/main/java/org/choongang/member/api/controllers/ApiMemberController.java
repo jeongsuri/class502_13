@@ -36,10 +36,13 @@ public class ApiMemberController {
             throw new BadRequestException(utils.getErrorMessages(errors));
         }
 
+        /*
         boolean result = false;
         if (!result) {
             throw new BadRequestException("예외 테스트!");
         }
+
+         */
 
         joinService.process(form);
 
