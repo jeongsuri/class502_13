@@ -7,15 +7,13 @@ import org.choongang.member.controllers.RequestJoin;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -31,8 +29,8 @@ public class ApiMemberControllerTest {
     //private WebApplicationContext ctx;
     @BeforeEach
     void init(){
-        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
-        //mockMvc = MockMvcBuilders.webAppContextSetup(ctx).build();
+        mockMvc = MockMvcBuilders.standaloneSetup(controller).build(); //단위테스트
+        //mockMvc = MockMvcBuilders.webAppContextSetup(ctx).build(); //통합테스트
     }
 
     @Test
@@ -56,7 +54,7 @@ public class ApiMemberControllerTest {
 
         //Content-Type : application/x-www-form-urlencoded
         //이름=값 & 이름=값...
-        /*
+        /* x
         mockMvc.perform(
                 post("/api/member")
                 .param("email","user99@test.org")
@@ -67,4 +65,9 @@ public class ApiMemberControllerTest {
          */
     }
 
+    @Test
+    void test2() throws Exception{
+        mockMvc.perform(get("/api/member/list"))
+                .andDo(print());
+    }
 }
