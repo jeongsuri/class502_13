@@ -30,6 +30,8 @@ public class ApiMemberController {
     private final JoinService joinService;
     private final Utils utils;
 
+
+    //JSON형태인 RequestJoin 가입처리
     @PostMapping // POST /api/member
     public ResponseEntity join(@RequestBody @Valid RequestJoin form, Errors errors) {
         if (errors.hasErrors()) {
@@ -41,8 +43,7 @@ public class ApiMemberController {
         if (!result) {
             throw new BadRequestException("예외 테스트!");
         }
-
-         */
+        */
 
         joinService.process(form);
 
@@ -50,7 +51,7 @@ public class ApiMemberController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-
+    //Json형태 회원조회
     @GetMapping("/info/{email}")
     public JSONData info(@PathVariable("email") String email) {
         // Content-Type: application/json

@@ -19,7 +19,7 @@ public class RestCommonControllerAdvice {
         HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR; // 500
         if (e instanceof CommonException commonException) {
             status = commonException.getStatus();
-            Map<String, List<String>> errorMessages = commonException.getErrorMessages();
+            Map<String, List<String>> errorMessages = commonException.getErrorMessages(); //CommonException의 Map<String, List<String>> errorMessages;만 받음..
             if (errorMessages != null) message = errorMessages;
         }
 
