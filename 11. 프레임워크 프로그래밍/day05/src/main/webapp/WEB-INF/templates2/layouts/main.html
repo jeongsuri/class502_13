@@ -3,12 +3,26 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <meta charset="UTF-8">
+    <title th:if="${pageTitle != null}" th:text="${pageTitle}"></title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <th:block layout:fragment="addCss">
+        <!--   컨트롤러가 없는 main뷰는 모델속성 추가가 불가능하기 때문에 직접 치환   -->
+    </th:block>
+    <th:block th:if="${addCss != null}">
+        <link rel="stylesheet" type="text/css" th:each="cssFile : ${addCss}" th:href="@{/css/{file}.css(file=${cssFile})}">
+    </th:block>
     <script th:src="@{/js/common.js}"></script>
+    <th:block layout:fragment="addScript">
+        <!--   컨트롤러가 없는 main뷰는 모델속성 추가가 불가능하기 때문에 직접 치환   -->
+    </th:block>
+    <th:block th:if="${addScript != null}">
+        <script th:each="jsFile : ${addScript}" th:src="@{/js/{file}.js(file=${jsFile})}"></script>
+    </th:block>
 </head>
 <body>
     <header th:replace="~{outlines/header::common}"></header>
     <main layout:fragment="content"></main>
     <footer th:replace="~{outlines/footer::common}"></footer>
+    <iframe name="ifrmProcess" class="dn"></iframe>
 </body>
 </html>
