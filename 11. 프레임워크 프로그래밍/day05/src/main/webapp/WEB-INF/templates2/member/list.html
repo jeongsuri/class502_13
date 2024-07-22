@@ -25,11 +25,15 @@
                     <th:block th:unless="${s.odd}">홀수</th:block>
                     -->
                 </td>
-                <td th:text="*{email}"></td>
+                <td th:text="*{#strings.concat(userName, '(', @utils.toUpper(email), ')')}"></td>
                 <td th:text="*{userName}"></td>
-                <td th:text="*{regDt}"></td>
+                <td th:text="*{#temporals.format(regDt, 'yyyy.MM.dd HH:mm')}"></td>
             </tr>
             </tbody>
         </table>
+        <div th:text="${#numbers.formatInteger(1000000000, 3, 'COMMA')}"></div>
+        <div th:each="num : ${#numbers.sequence(1,10)}">
+            <div th:text="${num}"></div>
+        </div>
     </body>
 </html>
