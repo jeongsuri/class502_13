@@ -23,7 +23,7 @@ public class Ex02 {
     void init(){
         for(long i = 1L; i <= 10L; i++){
             Member member = new Member();
-            member.setSeq(1L);
+            member.setSeq(i);
             member.setEmail("user " + i + "@test.org");
             member.setPassword("12345678");
             member.setUserName("사용자" + i);
@@ -32,10 +32,25 @@ public class Ex02 {
         }
 
         em.flush(); //insert 쿼리 실행 , DB영구반영
+        em.clear(); //영속 상태 엔티티 모두 비우기
     }
 
     @Test
     void test1(){
+        Member member = em.find(Member.class, 1L);
+        System.out.println(member);
 
+        Member member2 = em.find(Member.class, 1L);
+        System.out.println(member2);
+
+        System.out.println(member == member2);
+        System.out.println("member : " + System.identityHashCode(member));
+        System.out.println("member : " + System.identityHashCode(member2));
+
+        member.setUserName("(수정)사용자1");
+        //em.flush(); //UPDATE 쿼리 수행
+        //값 변경, 삭제 상태 변경 후 해당 데이터를 조회 -> 암묵적으로 flush();
+        Member member3 = em.find(Member.class, 1L);
+        System.out.println(member3);
     }
 }
