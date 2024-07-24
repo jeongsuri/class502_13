@@ -3,8 +3,8 @@ package org.choongang.member.entities;
 import jakarta.persistence.Entity;
 import jakarta.persistence.*;
 import lombok.Data;
-
-import java.time.LocalDateTime;
+import org.choongang.global.entities.BaseEntity;
+import org.choongang.member.constants.Authority;
 
 @Data
 @Entity //엔티티 에노테이션 설정하면 자동으로 테이블이 생성
@@ -15,14 +15,19 @@ import java.time.LocalDateTime;
         @Index(name="up_email_password", columnList = "email, password", unique = true)
 }) //인덱스설정
  */
-public class Member {
+public class Member extends BaseEntity {
     @Id @GeneratedValue
     private Long seq;
     private String email;
     private String password;
+
+    @Column(name ="name")
     private String userName;
-    @Lob
+
+    //@Lob
+    @Transient
     private String introduction;
-    private LocalDateTime createdAt;
-    private LocalDateTime modifiedAt;
+
+    @Enumerated(EnumType.STRING)
+    private Authority authority;
 }
