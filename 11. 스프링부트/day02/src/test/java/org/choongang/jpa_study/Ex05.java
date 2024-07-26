@@ -1,6 +1,6 @@
 package org.choongang.jpa_study;
 
-import org.choongang.member.Repositories.MemberRepository;
+import org.choongang.member.repositories.MemberRepository;
 import org.choongang.member.constants.Authority;
 import org.choongang.member.entities.Member;
 import org.junit.jupiter.api.BeforeEach;
