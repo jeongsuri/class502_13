@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import {produce} from 'immer';
 import TodoForm from '../components/TodoForm';
 import TodoList from '../components/TodoList';
 
@@ -14,18 +15,27 @@ const TodoContainer = () => {
     /*
     const newItems = items.map((item) =>  id === item.id ? ({ ...item, done: !item.done }) : item, );
     setItems(newItems);
-     */
     setItems((prev) =>
       prev.map((item) =>
         item.id === id ? { ...item, done: !item.done } : item,
       ),
     );
+     */
+    setItems(produce(draft => {
+      draft.filter((item) => item.id === id)
+        .forEach((item) => item.done = !item.done)
+    }));
   };
+
+  const onRemove = (id) => {
+    // filter 메서드
+    setItems(items => items.filter((item) => item.id !== id ));
+  }
 
   return (
     <>
       <TodoForm />
-      <TodoList items={items} onToggle={onToggle} />
+      <TodoList items={items} onToggle={onToggle} onRemove={onRemove}/>
     </>
   );
 };
