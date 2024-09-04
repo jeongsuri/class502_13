@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <style>
+            #dropBox{
+                width :300px;
+                height :300px;
+                border:2px dashed blue;
+            }
+        </style>
+        <script>
+            window.addEventListener("DOMContentLoaded", function(e){
+                //drag, dragstart, dargend, dragover(올렸을때), drop(뗄때)
+                //dragover와 drop은 이미지를 보여주는 기본동작이 존재
+                //drop쪽에는 파일에 정보를 갖고있음
+                const dropBox = document.getElementById("dropBox");
+                dropBox.addEventListener("dragover",function(e){
+                    e.preventDefault();
+                });
+                dropBox.addEventListener("drop",function(e){
+                    e.preventDefault();
+                    console.log(e.dataTransfer.files);
+                });
+            });
+        </script>
+        <div id="dropBox">
+            파일을 드래그 올려
+        </div>
+    </body>
+</html>

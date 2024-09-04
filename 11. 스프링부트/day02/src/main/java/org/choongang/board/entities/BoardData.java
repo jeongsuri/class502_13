@@ -1,11 +1,12 @@
 package org.choongang.board.entities;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.choongang.global.entities.BaseEntity;
 import org.choongang.member.entities.Member;
-
-import java.util.List;
 
 @Data
 @Builder
@@ -25,7 +26,7 @@ public class BoardData extends BaseEntity {
     @Lob
     private String content;
 
-    @ManyToMany
-    @ToString.Exclude
-    private List<HashTag> tags;
+//    @ManyToMany
+//    @ToString.Exclude
+//    private List<HashTag> tags;
 }

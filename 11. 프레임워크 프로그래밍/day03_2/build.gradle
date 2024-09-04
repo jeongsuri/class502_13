@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.choongang'
+version = '1.0-SNAPSHOT'
+
+ext{
+    springVersion = '6.1.10'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.springframework:spring-context:$springVersion" //Spring context
+    implementation "org.springframework:spring-jdbc:$springVersion" //Spring jdbc
+    implementation 'org.apache.tomcat:tomcat-jdbc:10.1.25' //Tomcat jdbc
+    runtimeOnly 'com.oracle.database.jdbc:ojdbc11:23.4.0.24.05' //ojdbc11
+    compileOnly 'org.projectlombok:lombok:1.18.34' //lombok
+    annotationProcessor 'org.projectlombok:lombok:1.18.34' //lombok
+    implementation 'org.slf4j:slf4j-api:2.0.13' //slf4j api
+    implementation 'ch.qos.logback:logback-classic:1.5.6' //logback 구현체
+
+
+
+    testImplementation "org.springframework:spring-test:$springVersion" //Spring test
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
