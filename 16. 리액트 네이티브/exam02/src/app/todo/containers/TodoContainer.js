@@ -11,7 +11,7 @@ const TodoContainer = () => {
 
   const titleRef = useRef();
 
-  const onToggle = (id) => {
+  const onToggle = useCallback((id) => {
     setItems(
       produce((draft) => {
         draft
@@ -21,14 +21,14 @@ const TodoContainer = () => {
           });
       }),
     );
-  };
+  },[]);
 
-  const onRemove = (id) => {
+  const onRemove = useCallback((id) => {
     // filter 메서드
     setItems((items) => items.filter((item) => item.id !== id));
-  };
+  }, []);
 
-  const onChange = (e) => {
+  const onChange = useCallback((e) => {
     /**
      * e.target
      * //e.currentTarget
@@ -37,13 +37,13 @@ const TodoContainer = () => {
     const name = e.target.name;
     const value = e.target.value;
     setForm((form) => ({ ...form, [name]: value }));
-  };
+  }, []);
 
-  const onClick = (done) => {
+  const onClick = useCallback((done) => {
     setForm((form) => ({ ...form, done }));
-  };
+  }, []);
 
-  const onSubmit = (e) => {
+  const onSubmit = useCallback((e) => {
     e.preventDefault(); // 양식 기본 동작 차단
 
     // 검증
@@ -76,7 +76,7 @@ const TodoContainer = () => {
     // 양식 초기화
     setForm({});
     titleRef.current.focus();
-  };
+  }, [form, items]);
 
   return (
     <>
@@ -93,4 +93,4 @@ const TodoContainer = () => {
   );
 };
 
-export default TodoContainer;
+export default React.memo(TodoContainer);
